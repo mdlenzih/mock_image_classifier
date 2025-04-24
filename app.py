@@ -1,11 +1,12 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 from mock_model import MockModel
 import base64
 from io import BytesIO
 
 # Initialize Flask application
 app = Flask(__name__)
-
+CORS(app)
 # Initialize the mock model that will handle image processing and prediction
 model = MockModel()
 
